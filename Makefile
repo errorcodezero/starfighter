@@ -2,7 +2,7 @@ SRC_DIR = src
 BUILD_DIR = build
 EXE = starfighter
 
-SRC = main.c emu.c
+SRC = main.c emu.c binary_tree.c
 OBJ = $(SRC:%.c=$(BUILD_DIR)/%.o)
 
 CFLAGS += -std=c11 -Wall -Wextra -Werror -pedantic

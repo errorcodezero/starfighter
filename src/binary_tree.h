@@ -1,17 +1,13 @@
 #ifndef INCLUDE_SRC_BINARY_TREE_H_
 #define INCLUDE_SRC_BINARY_TREE_H_
 
+#include <stdbool.h>
 #include <stdint.h>
+
 typedef struct BinaryTree {
-  BinaryTree *left;
-  BinaryTree *right;
-  bool least_recently_used_is_left = true;
-  // union {
-  //   struct {
-  //     uint32_t tag;
-  //     uint8_t data;
-  //   } tag;
-  // };
+  struct BinaryTree *left;
+  struct BinaryTree *right;
+  bool least_recently_used_is_left;
 } BinaryTree;
 
 #endif // INCLUDE_SRC_BINARY_TREE_H_

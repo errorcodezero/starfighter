@@ -3,17 +3,25 @@
 
 #include <stdint.h>
 
-typedef struct Clock {
-} Clock;
+#define MEMORY_WIDTH 0xA00000000
+
+// typedef struct Clock {
+// } Clock;
+
+typedef struct SetAssociativeCache {
+  // split our cached memory into different lines based on the starting digit in
+  // hex
+  void *cacheLines[0x10];
+} SetAssociativeCache;
 
 typedef struct Core {
   uint32_t registers[16];
-  Clock clock;
+  SetAssociativeCache cacheT1;
 } Core;
 
 typedef struct Emulator {
   Core cores[4];
-  Clock master_clock;
+  uint8_t memory[MEMORY_WIDTH];
 } Emulator;
 
 #endif // INCLUDE_SRC_VM_H_

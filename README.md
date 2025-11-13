@@ -10,5 +10,6 @@ Cool CPU architecture
 - 2^32 bytes of memory
 - 16 32-bit general purpose registers per core
 - Three tiers of CPU caching
+- Shared caching for third tier
 
 ## Instructions
